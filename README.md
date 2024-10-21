@@ -1,6 +1,17 @@
-# Nuxt Minimal Starter
+# Demo project
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Information
+Feel free to modify `app.vue` and `nuxt.config.js` to switch between Sass and Tailwind.
+
+![tw](./public/tw.png)
+![scss](./public/scss.png)
+| | HTML | CSS | update speed* | compatibility* |
+| - | - | - | - | - |
+| Tailwind | 11.01 kB| 8.79 kB | <0.3s | Yes |
+| Sass | 8.59 kB| 5.73 kB | ~0.7s| Yes |
+
+****Manual testing, MacBook Air 2020 | intel Core i3 | 8G,***   
+****The ability to switch and transition from one party to another***
 
 ## Setup
 
@@ -71,5 +82,3 @@ yarn preview
 # bun
 bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

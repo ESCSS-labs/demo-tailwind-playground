@@ -1,4 +1,4 @@
 <template>
-  <Tailwind />
-  <!-- <Sass /> -->
+  <!-- <Tailwind /> -->
+  <Sass />
 </template>

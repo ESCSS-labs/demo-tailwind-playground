@@ -4,14 +4,14 @@
 @use 'sass:list';
 @use 'sass:meta';
 
-/*! ESCSS-SCSS v1.0.1 | AGPL-3.0-only or Commercial License | https://github.com/ESCSS-labs */
+/*! ESCSS-SCSS v1.0.3 | AGPL-3.0-only or Commercial License | https://github.com/ESCSS-labs */
 
 // Set your project's breakpoints
-$_sm: 640px;
-$_md: 768px;
-$_lg: 1024px;
-$_xl: 1280px;
-$_xxl: 1536px;
+$SM: 640px;
+$MD: 768px;
+$LG: 1024px;
+$XL: 1280px;
+$XXL: 1536px;
 
 $name-50: null;
 $name-100: null;
@@ -485,11 +485,11 @@ $tw-mismatch--shadow-color: false;
 $tw-mismatch--ring-offset-width: false;
 
 .AGPLv3-Modification-Check {
-  _sm: $_sm;
-  _md: $_md;
-  _lg: $_lg;
-  _xl: $_xl;
-  _xxl: $_xxl;
+  sm: $SM;
+  md: $MD;
+  lg: $LG;
+  xl: $XL;
+  xxl: $XXL;
 }
 
 // _c stands for color (file size concern)
@@ -560,31 +560,31 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin sm {
-  @media (min-width: $_sm) {
+  @media (min-width: $SM) {
     @content;
   }
 }
 
 @mixin md {
-  @media (min-width: $_md) {
+  @media (min-width: $MD) {
     @content;
   }
 }
 
 @mixin lg {
-  @media (min-width: $_lg) {
+  @media (min-width: $LG) {
     @content;
   }
 }
 
 @mixin xl {
-  @media (min-width: $_xl) {
+  @media (min-width: $XL) {
     @content;
   }
 }
 
 @mixin \2xl {
-  @media (min-width: $_xxl) {
+  @media (min-width: $XXL) {
     @content;
   }
 }
@@ -978,7 +978,7 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
-// smaller size and clean base CSS than v3
+// smaller size and clean CSS base (Recommended)
 @mixin utils_base-preflight-v4-modify {
   // set in the root component for base css
 
@@ -1225,7 +1225,7 @@ $tw-mismatch--ring-offset-width: false;
   $tw-mismatch--ring-offset-width: false !global;
 }
 
-@mixin -moz-osx-font-smoothing($v, $rwd: null) {
+@mixin \-moz-osx-font-smoothing($v, $rwd: null) {
   & {
     @if $rwd==null {
       -moz-osx-font-smoothing: $v;
@@ -1237,7 +1237,7 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
-@mixin -webkit-box-orient($v, $rwd: null) {
+@mixin \-webkit-box-orient($v, $rwd: null) {
   & {
     @if $rwd==null {
       -webkit-box-orient: $v;
@@ -1249,7 +1249,7 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
-@mixin -webkit-font-smoothing($v, $rwd: null) {
+@mixin \-webkit-font-smoothing($v, $rwd: null) {
   & {
     @if $rwd==null {
       -webkit-font-smoothing: $v;
@@ -1261,7 +1261,7 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
-@mixin -webkit-line-clamp($v, $rwd: null) {
+@mixin \-webkit-line-clamp($v, $rwd: null) {
   & {
     @if $rwd==null {
       -webkit-line-clamp: $v;
@@ -3828,11 +3828,11 @@ $tw-mismatch--ring-offset-width: false;
 @mixin container {
   @include width(100%);
 
-  @include max-width($_sm, $_sm);
-  @include max-width($_md, $_md);
-  @include max-width($_lg, $_lg);
-  @include max-width($_xl, $_xl);
-  @include max-width($_xxl, $_xxl);
+  @include max-width($SM, $SM);
+  @include max-width($MD, $MD);
+  @include max-width($LG, $LG);
+  @include max-width($XL, $XL);
+  @include max-width($XXL, $XXL);
 }
 
 @mixin block {
@@ -15324,23 +15324,23 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin max-w-screen-sm {
-  @include max-width($_sm);
+  @include max-width($SM);
 }
 
 @mixin max-w-screen-md {
-  @include max-width($_md);
+  @include max-width($MD);
 }
 
 @mixin max-w-screen-lg {
-  @include max-width($_lg);
+  @include max-width($LG);
 }
 
 @mixin max-w-screen-xl {
-  @include max-width($_xl);
+  @include max-width($XL);
 }
 
 @mixin max-w-screen-2xl {
-  @include max-width($_xxl);
+  @include max-width($XXL);
 }
 
 @mixin max-w-($v) {
@@ -17376,13 +17376,13 @@ $tw-mismatch--ring-offset-width: false;
 }
 
 @mixin antialiased {
-  @include -webkit-font-smoothing(antialiased);
-  @include -moz-osx-font-smoothing(grayscale);
+  @include \-webkit-font-smoothing(antialiased);
+  @include \-moz-osx-font-smoothing(grayscale);
 }
 
 @mixin subpixel-antialiased {
-  @include -webkit-font-smoothing(auto);
-  @include -moz-osx-font-smoothing(auto);
+  @include \-webkit-font-smoothing(auto);
+  @include \-moz-osx-font-smoothing(auto);
 }
 
 @mixin italic {
@@ -17544,57 +17544,57 @@ $tw-mismatch--ring-offset-width: false;
 @mixin line-clamp-1 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(1);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(1);
 }
 
 @mixin line-clamp-2 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(2);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(2);
 }
 
 @mixin line-clamp-3 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(3);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(3);
 }
 
 @mixin line-clamp-4 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(4);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(4);
 }
 
 @mixin line-clamp-5 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(5);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(5);
 }
 
 @mixin line-clamp-6 {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp(6);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp(6);
 }
 
 @mixin line-clamp-none {
   @include overflow(visible);
   @include display(block);
-  @include -webkit-box-orient(horizontal);
-  @include -webkit-line-clamp(none);
+  @include \-webkit-box-orient(horizontal);
+  @include \-webkit-line-clamp(none);
 }
 
 @mixin line-clamp-($v) {
   @include overflow(hidden);
   @include display(-webkit-box);
-  @include -webkit-box-orient(vertical);
-  @include -webkit-line-clamp($v);
+  @include \-webkit-box-orient(vertical);
+  @include \-webkit-line-clamp($v);
 }
 
 @mixin leading-3 {
@@ -17719,6 +17719,10 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin text-current {
   @include color(currentColor);
+}
+
+@mixin text-transparent {
+  @include color(transparent);
 }
 
 @mixin text-name-50($v: 1) {
@@ -17851,10 +17855,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin text-name3-950($v: 1) {
   @include color(_c($name3-950, $v));
-}
-
-@mixin text-transparent($v: 1) {
-  @include color(_c(transparent, $v));
 }
 
 @mixin text-black($v: 1) {
@@ -18874,6 +18874,10 @@ $tw-mismatch--ring-offset-width: false;
   @include text-decoration-color(currentColor);
 }
 
+@mixin decoration-transparent {
+  @include text-decoration-color(transparent);
+}
+
 @mixin decoration-name-50($v: 1) {
   @include text-decoration-color(_c($name-50, $v));
 }
@@ -19004,10 +19008,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin decoration-name3-950($v: 1) {
   @include text-decoration-color(_c($name3-950, $v));
-}
-
-@mixin decoration-transparent($v: 1) {
-  @include text-decoration-color(_c(transparent, $v));
 }
 
 @mixin decoration-black($v: 1) {
@@ -20520,6 +20520,10 @@ $tw-mismatch--ring-offset-width: false;
   @include background-color(currentColor);
 }
 
+@mixin bg-transparent {
+  @include background-color(transparent);
+}
+
 @mixin bg-name-50($v: 1) {
   @include background-color(_c($name-50, $v));
 }
@@ -20650,10 +20654,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin bg-name3-950($v: 1) {
   @include background-color(_c($name3-950, $v));
-}
-
-@mixin bg-transparent($v: 1) {
-  @include background-color(_c(transparent, $v));
 }
 
 @mixin bg-black($v: 1) {
@@ -21789,6 +21789,11 @@ $tw-mismatch--ring-offset-width: false;
   @include background-image(_l-g());
 }
 
+@mixin from-transparent {
+  $tw-gradient-from: transparent !global;
+  @include background-image(_l-g());
+}
+
 @mixin from-name-50($v: 1) {
   $tw-gradient-from: _c($name-50, $v) !global;
   @include background-image(_l-g());
@@ -21951,11 +21956,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin from-name3-950($v: 1) {
   $tw-gradient-from: _c($name3-950, $v) !global;
-  @include background-image(_l-g());
-}
-
-@mixin from-transparent($v: 1) {
-  $tw-gradient-from: _c(transparent, $v) !global;
   @include background-image(_l-g());
 }
 
@@ -23293,6 +23293,11 @@ $tw-mismatch--ring-offset-width: false;
   @include background-image(_l-g());
 }
 
+@mixin via-transparent {
+  $tw-gradient-via: transparent !global;
+  @include background-image(_l-g());
+}
+
 @mixin via-name-50($v: 1) {
   $tw-gradient-via: _c($name-50, $v) !global;
   @include background-image(_l-g());
@@ -23455,11 +23460,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin via-name3-950($v: 1) {
   $tw-gradient-via: _c($name3-950, $v) !global;
-  @include background-image(_l-g());
-}
-
-@mixin via-transparent($v: 1) {
-  $tw-gradient-via: _c(transparent, $v) !global;
   @include background-image(_l-g());
 }
 
@@ -24797,6 +24797,11 @@ $tw-mismatch--ring-offset-width: false;
   @include background-image(_l-g());
 }
 
+@mixin to-transparent {
+  $tw-gradient-to: transparent !global;
+  @include background-image(_l-g());
+}
+
 @mixin to-name-50($v: 1) {
   $tw-gradient-to: _c($name-50, $v) !global;
   @include background-image(_l-g());
@@ -24959,11 +24964,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin to-name3-950($v: 1) {
   $tw-gradient-to: _c($name3-950, $v) !global;
-  @include background-image(_l-g());
-}
-
-@mixin to-transparent($v: 1) {
-  $tw-gradient-to: _c(transparent, $v) !global;
   @include background-image(_l-g());
 }
 
@@ -26339,6 +26339,10 @@ $tw-mismatch--ring-offset-width: false;
   @include border-color(currentColor);
 }
 
+@mixin border-transparent {
+  @include border-color(transparent);
+}
+
 @mixin border-name-50($v: 1) {
   @include border-color(_c($name-50, $v));
 }
@@ -26469,10 +26473,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin border-name3-950($v: 1) {
   @include border-color(_c($name3-950, $v));
-}
-
-@mixin border-transparent($v: 1) {
-  @include border-color(_c(transparent, $v));
 }
 
 @mixin border-black($v: 1) {
@@ -28413,6 +28413,12 @@ $tw-mismatch--ring-offset-width: false;
   }
 }
 
+@mixin divide-transparent {
+  > * ~ * {
+    @include border-color(transparent);
+  }
+}
+
 @mixin divide-name-50($v: 1) {
   > * ~ * {
     @include border-color(_c($name-50, $v));
@@ -28608,12 +28614,6 @@ $tw-mismatch--ring-offset-width: false;
 @mixin divide-name3-950($v: 1) {
   > * ~ * {
     @include border-color(_c($name3-950, $v));
-  }
-}
-
-@mixin divide-transparent($v: 1) {
-  > * ~ * {
-    @include border-color(_c(transparent, $v));
   }
 }
 
@@ -30251,6 +30251,10 @@ $tw-mismatch--ring-offset-width: false;
   @include outline-color(currentColor);
 }
 
+@mixin outline-transparent {
+  @include outline-color(transparent);
+}
+
 @mixin outline-name-50($v: 1) {
   @include outline-color(_c($name-50, $v));
 }
@@ -30381,10 +30385,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin outline-name3-950($v: 1) {
   @include outline-color(_c($name3-950, $v));
-}
-
-@mixin outline-transparent($v: 1) {
-  @include outline-color(_c(transparent, $v));
 }
 
 @mixin outline-black($v: 1) {
@@ -31449,6 +31449,11 @@ $tw-mismatch--ring-offset-width: false;
   @include box-shadow(_b-s());
 }
 
+@mixin ring-transparent {
+  $tw-ring-color: transparent !global;
+  @include box-shadow(_b-s());
+}
+
 @mixin ring-name-50($v: 1) {
   $tw-ring-color: _c($name-50, $v) !global;
   @include box-shadow(_b-s());
@@ -31611,11 +31616,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin ring-name3-950($v: 1) {
   $tw-ring-color: _c($name3-950, $v) !global;
-  @include box-shadow(_b-s());
-}
-
-@mixin ring-transparent($v: 1) {
-  $tw-ring-color: _c(transparent, $v) !global;
   @include box-shadow(_b-s());
 }
 
@@ -32860,6 +32860,11 @@ $tw-mismatch--ring-offset-width: false;
   @include box-shadow(_b-s());
 }
 
+@mixin ring-offset-transparent {
+  $tw-ring-offset-color: transparent !global;
+  @include box-shadow(_b-s());
+}
+
 @mixin ring-offset-name-50($v: 1) {
   $tw-ring-offset-color: _c($name-50, $v) !global;
   @include box-shadow(_b-s());
@@ -33022,11 +33027,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin ring-offset-name3-950($v: 1) {
   $tw-ring-offset-color: _c($name3-950, $v) !global;
-  @include box-shadow(_b-s());
-}
-
-@mixin ring-offset-transparent($v: 1) {
-  $tw-ring-offset-color: _c(transparent, $v) !global;
   @include box-shadow(_b-s());
 }
 
@@ -34505,6 +34505,12 @@ $tw-mismatch--ring-offset-width: false;
   @include box-shadow(_b-s());
 }
 
+@mixin shadow-transparent {
+  $tw-mismatch--shadow-color: true !global;
+  $tw-shadow-color: transparent !global;
+  @include box-shadow(_b-s());
+}
+
 @mixin shadow-name-50($v: 1) {
   $tw-mismatch--shadow-color: true !global;
   $tw-shadow-color: _c($name-50, $v) !global;
@@ -34700,12 +34706,6 @@ $tw-mismatch--ring-offset-width: false;
 @mixin shadow-name3-950($v: 1) {
   $tw-mismatch--shadow-color: true !global;
   $tw-shadow-color: _c($name3-950, $v) !global;
-  @include box-shadow(_b-s());
-}
-
-@mixin shadow-transparent($v: 1) {
-  $tw-mismatch--shadow-color: true !global;
-  $tw-shadow-color: _c(transparent, $v) !global;
   @include box-shadow(_b-s());
 }
 
@@ -39265,6 +39265,10 @@ $tw-mismatch--ring-offset-width: false;
   @include accent-color(currentColor);
 }
 
+@mixin accent-transparent {
+  @include accent-color(transparent);
+}
+
 @mixin accent-name-50($v: 1) {
   @include accent-color(_c($name-50, $v));
 }
@@ -39395,10 +39399,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin accent-name3-950($v: 1) {
   @include accent-color(_c($name3-950, $v));
-}
-
-@mixin accent-transparent($v: 1) {
-  @include accent-color(_c(transparent, $v));
 }
 
 @mixin accent-black($v: 1) {
@@ -40397,6 +40397,10 @@ $tw-mismatch--ring-offset-width: false;
   @include caret-color(currentColor);
 }
 
+@mixin caret-transparent {
+  @include caret-color(transparent);
+}
+
 @mixin caret-name-50($v: 1) {
   @include caret-color(_c($name-50, $v));
 }
@@ -40527,10 +40531,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin caret-name3-950($v: 1) {
   @include caret-color(_c($name3-950, $v));
-}
-
-@mixin caret-transparent($v: 1) {
-  @include caret-color(_c(transparent, $v));
 }
 
 @mixin caret-black($v: 1) {
@@ -45940,6 +45940,10 @@ $tw-mismatch--ring-offset-width: false;
   @include fill(currentColor);
 }
 
+@mixin fill-transparent {
+  @include fill(transparent);
+}
+
 @mixin fill-name-50($v: 1) {
   @include fill(_c($name-50, $v));
 }
@@ -46070,10 +46074,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin fill-name3-950($v: 1) {
   @include fill(_c($name3-950, $v));
-}
-
-@mixin fill-transparent($v: 1) {
-  @include fill(_c(transparent, $v));
 }
 
 @mixin fill-black($v: 1) {
@@ -47068,6 +47068,10 @@ $tw-mismatch--ring-offset-width: false;
   @include stroke(currentColor);
 }
 
+@mixin stroke-transparent {
+  @include stroke(transparent);
+}
+
 @mixin stroke-name-50($v: 1) {
   @include stroke(_c($name-50, $v));
 }
@@ -47198,10 +47202,6 @@ $tw-mismatch--ring-offset-width: false;
 
 @mixin stroke-name3-950($v: 1) {
   @include stroke(_c($name3-950, $v));
-}
-
-@mixin stroke-transparent($v: 1) {
-  @include stroke(_c(transparent, $v));
 }
 
 @mixin stroke-black($v: 1) {

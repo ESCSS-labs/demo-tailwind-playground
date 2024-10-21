@@ -59,7 +59,7 @@
 <style lang="scss">
 // @include utils_base-preflight-v3-modify;
 
-// smaller size
+// smaller size (Recommended)
 @include utils_base-preflight-v4-modify;
 
 #🔥Demo {
