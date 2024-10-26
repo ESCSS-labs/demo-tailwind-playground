@@ -1,4 +1,4 @@
-# Demo project
+# Tailwind Playground Demo
 
 ## Information
 Feel free to modify `app.vue` and `nuxt.config.js` to switch between Sass and Tailwind.
