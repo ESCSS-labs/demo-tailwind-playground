@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         scss: {
           api: 'modern-compiler',
           additionalData: `
-          @use 'assets/css/_awaken.scss' as *;
+          @use '/assets/styles/_awaken.scss' as *;
           `,
         },
       },

@@ -76,7 +76,7 @@
     @include py-12;
   }
 
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__Img {
@@ -86,7 +86,7 @@
   @include max-w-none;
   @include \-translate-x-1\/2;
   @include \-translate-y-1\/2;
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__Div {
@@ -95,7 +95,7 @@
   @include inset-0;
   @include bg-(url(https://play.tailwindcss.com/img/grid.svg));
   @include bg-center;
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__X {
@@ -115,44 +115,44 @@
     @include px-10;
   }
 
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__X__X {
   @include mx-auto;
   @include max-w-md;
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__X__X__Img {
   @include h-6;
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__X__X__X {
-  @include divide-y;
   @include divide-gray-300(50%);
-  @include utils_reset-tw;
+  @include divide-y;
+  @include utils_reset;
 }
 
 #🔥Demo__X__X__X__X {
-  @include space-y-6;
   @include py-8;
   @include text-base;
   @include leading-7;
   @include text-gray-600;
-  @include utils_reset-tw;
+  @include space-y-6;
+  @include utils_reset;
 }
 
 #🔥Demo__X__X__X__X__Ul {
+  @include utils_reset;
   @include space-y-4;
-  @include utils_reset-tw;
 }
 
 #🔥Demo__X__X__X__X__Ul__Li {
   @include flex;
   @include items-center;
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__X__X__X__X__Ul__Li__Svg {
@@ -162,19 +162,19 @@
   @include fill-sky-100;
   @include stroke-sky-500;
   @include stroke-2;
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__X__X__X__X__Ul__Li__P {
   @include ml-4;
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__X__X__X__X__Ul__Li__P__Code {
   @include text-sm;
   @include font-bold;
   @include text-gray-900;
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__X__X__X__X2 {
@@ -182,12 +182,12 @@
   @include text-base;
   @include font-semibold;
   @include leading-7;
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__X__X__X__X2__P {
   @include text-gray-900;
-  @include utils_reset-tw;
+  @include utils_reset;
 }
 
 #🔥Demo__X__X__X__X2__P2__A {
